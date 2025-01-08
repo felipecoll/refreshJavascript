@@ -41,3 +41,30 @@ console.log(firstFruit)
 
 const numberOfFruits = fruits.length
 console.log(numberOfFruits)
+
+// Mutability
+
+fruits.push('Melon')
+console.log(fruits)
+
+// Inmutability
+
+const newFruits = fruits.concat('Kiwi')
+console.log(newFruits)
+console.log(fruits)
+
+// Checking arrays with Array.isArray()
+
+const isArray = Array.isArray(fruits)
+console.log(isArray)
+
+// Practical exercise 
+
+const numbersArray = [1,2,4,5,6,7,8,9]
+let sum = 0 
+
+for (let i = 0; i < numbersArray.length; i++) {
+    sum += numbersArray[i]
+}
+
+console.log(sum)
