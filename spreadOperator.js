@@ -38,3 +38,5 @@ const numbers = [1,2,3]
 const result = sum(...numbers)
 
 console.log(result)
+
+//================ Fin de clase 
