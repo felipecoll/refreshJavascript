@@ -91,4 +91,103 @@ Dentro del constructor de la clase hija, usamos super() para llamar al construct
 Instancia de EstudianteUniversidad: Creamos un nuevo objeto estudianteUni usando la clase hija, que hereda de Estudiante. Este objeto puede usar tanto los métodos heredados como los propios.
 
 
+Ejemplo practico
+
+class PrimeroB {
+    constructor(nombre, apellido, sexo, edad, estatura, calificacionMatematicas) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.sexo = sexo;
+        this.edad = edad;
+        this.estatura = estatura;
+        this.calificacionMatematicas = calificacionMatematicas;  // Esta es la propiedad
+    }
+    
+    mostrarCalificacionMatematicas() {  // El nombre del método debe ser diferente
+        console.log(`Esta es tu calificación en Matemáticas: ${this.calificacionMatematicas} del niño ${this.nombre}`);
+    }
+}
+
+class CalificacionEspañol extends PrimeroB {
+    constructor(nombre, apellido, sexo, edad, estatura, calificacionMatematicas, calificacionEspañol) {
+        super(nombre, apellido, sexo, edad, estatura, calificacionMatematicas);
+        this.calificacionEspañol = calificacionEspañol;  // Nueva propiedad para calificación en Español
+    }
+    
+    mostrarCalificacionEspañol() {
+        console.log(`Esta es tu calificación en Español: ${this.calificacionEspañol} del niño ${this.nombre}`);
+    }
+}
+
+// Creando un objeto de la clase CalificacionEspañol
+const alumno = new CalificacionEspañol("Alejandro", "Sánchez", "Masculino", 30, 1.75, 9, 8);
+
+// Mostrando las calificaciones
+alumno.mostrarCalificacionMatematicas();  // Esta es tu calificación en Matemáticas: 9 del niño Alejandro
+alumno.mostrarCalificacionEspañol();      // Esta es tu calificación en Español: 8 del niño Alejandro
+
+```class PrimeroB {
+
+&#x20;   constructor(nombre, apellido, sexo, edad, estatura, calificacionMatematicas) {
+
+&#x20;       this.nombre = nombre;
+
+&#x20;       this.apellido = apellido;
+
+&#x20;       this.sexo = sexo;
+
+&#x20;       this.edad = edad;
+
+&#x20;       this.estatura = estatura;
+
+&#x20;       this.calificacionMatematicas = calificacionMatematicas;  // Esta es la propiedad
+
+&#x20;   }
+
+&#x20;  &#x20;
+
+&#x20;   mostrarCalificacionMatematicas() {  // El nombre del método debe ser diferente
+
+&#x20;       console.log(`Esta es tu calificación en Matemáticas: ${this.calificacionMatematicas} del niño ${this.nombre}`);
+
+&#x20;   }
+
+}
+
+
+
+class CalificacionEspañol extends PrimeroB {
+
+&#x20;   constructor(nombre, apellido, sexo, edad, estatura, calificacionMatematicas, calificacionEspañol) {
+
+&#x20;       super(nombre, apellido, sexo, edad, estatura, calificacionMatematicas);
+
+&#x20;       this.calificacionEspañol = calificacionEspañol;  // Nueva propiedad para calificación en Español
+
+&#x20;   }
+
+&#x20;  &#x20;
+
+&#x20;   mostrarCalificacionEspañol() {
+
+&#x20;       console.log(`Esta es tu calificación en Español: ${this.calificacionEspañol} del niño ${this.nombre}`);
+
+&#x20;   }
+
+}
+
+
+
+// Creando un objeto de la clase CalificacionEspañol
+
+const alumno = new CalificacionEspañol("Alejandro", "Sánchez", "Masculino", 30, 1.75, 9, 8);
+
+
+
+// Mostrando las calificaciones
+
+alumno.mostrarCalificacionMatematicas();  // Esta es tu calificación en Matemáticas: 9 del niño Alejandro
+
+alumno.mostrarCalificacionEspañol();      // Esta es tu calificación en Español: 8 del niño Alejandro
+
 */
