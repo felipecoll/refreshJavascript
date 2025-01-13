@@ -7,62 +7,59 @@ Requerimientos del reto:
 4. Si el usuario y contraseÃ±a son incorrectos, el sistema debe mostrar un mensaje de error y no mostrar ningun timeline.
 
 */
-
-//Desarrollo del mismo =====================> 
-
 function loguinSocialNetwork() {
-    const usario = prompt('Ingrese un usuario')
-    const clave = prompt('Ingrese una contraseña')
-
-    const usuario = usersDatabase.find(user => usuario === usersDatabase.username && clave === usersDatabase.password)
-    const frases = usersTimeline.find(user => usario === usersTimeline.username)
-
-    if (usuario && clave) {
-        console.log(`Bienvenido ${usuario} nuevamente!`)
-        console.log(`Estas son tus ultimas citas de tu autoria ${frases}`)
+    const username = prompt('Ingrese un usuario');
+    const password = prompt('Ingrese una contraseña');
+    
+    // Buscar el usuario en la base de datos
+    const usuario = usersDatabase.find(user => username === user.username && password === user.password);
+    // Buscar frases asociadas en el timeline
+    const frases = usersTimeline.find(user => username === user.username);
+    
+    if (usuario) {
+        console.log(`Bienvenido ${usuario.username} nuevamente!`);
+        if (frases) {
+            console.log(`Estas son tus últimas citas de tu autoría: ${frases.timeline}`);
+        } else {
+            console.log(`No hay citas asociadas a ${usuario.username}`);
+        }
     } else {
-        console.log('Datos para iniciar sesion erroneos')
+        console.log('Datos para iniciar sesión erróneos');
     }
-
-console.log(usario, clave)
-
 }
-
-
-
-
-// Fin desarrollo ===========================>    
 
 const usersDatabase = [
     {
-      username: "andres",
-      password: "123",
+        username: "andres",
+        password: "123",
     },
     {
-      username: "caro",
-      password: "456",
+        username: "caro",
+        password: "456",
     },
     {
-      username: "mariana",
-      password: "789",
+        username: "mariana",
+        password: "789",
     },
-  ];
-  
-  const usersTimeline = [
+];
+
+const usersTimeline = [
     {
-      username: "Estefany",
-      timeline: "Me encata Javascript!",
-    },
-    {
-      username: "Oscar",
-      timeline: "Bebeloper es lo mejor!",
+        username: "Estefany",
+        timeline: "Me encanta Javascript!",
     },
     {
-      username: "Mariana",
-      timeline: "A mi me gusta mÃ¡s el cafÃ© que el tÃ©",
+        username: "Oscar",
+        timeline: "Bebeloper es lo mejor!",
     },
     {
-      username: "Andres",
-      timeline: "Yo hoy no quiero trabajar",
+        username: "mariana",
+        timeline: "A mí me gusta más el café que el té",
     },
-  ];
+    {
+        username: "andres",
+        timeline: "Yo hoy no quiero trabajar",
+    },
+];
+
+loguinSocialNetwork();
