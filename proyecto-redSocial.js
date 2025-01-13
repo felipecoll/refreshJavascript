@@ -12,7 +12,17 @@ Requerimientos del reto:
 
 function loguinSocialNetwork() {
     const usario = prompt('Ingrese un usuario')
-const clave = prompt('Ingrese una contraseña')
+    const clave = prompt('Ingrese una contraseña')
+
+    const usuario = usersDatabase.find(user => usuario === usersDatabase.username && clave === usersDatabase.password)
+    const frases = usersTimeline.find(user => usario === usersTimeline.username)
+
+    if (usuario && clave) {
+        console.log(`Bienvenido ${usuario} nuevamente!`)
+        console.log(`Estas son tus ultimas citas de tu autoria ${frases}`)
+    } else {
+        console.log('Datos para iniciar sesion erroneos')
+    }
 
 console.log(usario, clave)
 
