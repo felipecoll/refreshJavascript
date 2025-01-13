@@ -8,6 +8,21 @@ Requerimientos del reto:
 
 */
 
+//Desarrollo del mismo =====================> 
+
+function loguinSocialNetwork() {
+    const usario = prompt('Ingrese un usuario')
+const clave = prompt('Ingrese una contraseña')
+
+console.log(usario, clave)
+
+}
+
+
+
+
+// Fin desarrollo ===========================>    
+
 const usersDatabase = [
     {
       username: "andres",
