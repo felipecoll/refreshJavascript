@@ -31,5 +31,12 @@ const promise = new Promise((resolve, reject) => {
             reject('Fallo la operacion.')
         }
     }, 2000)
-   
 })
+
+promise
+    .then((succesMessage) => {
+        console.log(succesMessage)
+    })
+    .catch((errorMessage) => {
+        console.log(errorMessage)
+    })
